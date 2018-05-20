@@ -1,8 +1,18 @@
-<t>取引履歴【<%= @env %>】</t>
+<h1>取引履歴【<%= @env %>】</h1>
 
-<p>取引日時, </p>
-<ul>
-  <% @transactions.each do |t| -%>
-    <li><%= t %></li>
+<% @bank_data_list.size.times do |i| -%>
+  <h2><%= @bank_data_list[i][0] %></h2>
+
+  <h3>取引内容</h3>
+  <p>送金主 -> 送金額 -> 受取主</p>
+  <p><%= @transaction_data[i][2] %> -> <%= @transaction_data[i][6] %> -> <%= @transaction_data[i][4] %> </p>
+
+  <h3>本取引後の所持TYC一覧</h3>
+  <p> 所有者 ： 所有TYC </p>
+  <% @bank_data_list[i][1..-1].each do |data| -%>
+    <ul>
+      <li><%= data[0] %> ： <%= data[1] %></li>
+    </ul>
   <% end -%>
-</ul>
+
+<% end -%>

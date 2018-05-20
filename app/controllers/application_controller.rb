@@ -8,4 +8,7 @@ class ApplicationController < ActionController::Base
   else
     TRANSACTION_LOG_PATH = '/Users/Y_h/Desktop/transaction_log.csv'.freeze
   end
+
+  # 研究室内の人数
+  LAB_MEMBER_NUM = 40
 end
