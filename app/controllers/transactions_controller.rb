@@ -1,3 +1,4 @@
+# coding: utf-8
 class TransactionsController < ApplicationController
   require 'csv'
 
@@ -7,7 +8,7 @@ class TransactionsController < ApplicationController
     else
       @env = '開発'
     end
-    @transactions = CSV.read(TRANSACTION_LOG_PATH)
+    @transactions = CSV.read(TRANSACTION_LOG_PATH, "r:ISO-8859-1")
   end
 
 end
