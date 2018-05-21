@@ -32,7 +32,6 @@ class TransactionsController < ApplicationController
       end
       count += 1
     end
-    pp @bank_data_list
   end
 
 end
