@@ -8,6 +8,7 @@
   <p><%= @transaction_data[i][2] %> -> <%= @transaction_data[i][6] %> -> <%= @transaction_data[i][4] %> </p>
 
   <h3>本取引後の所持TYC一覧</h3>
+  <p>総TYC金額（流通量）： <%= @tyc_amount_list[i] %></p>
   <p> 所有者 ： 所有TYC </p>
   <% @bank_data_list[i][1..-1].each do |data| -%>
     <ul>
