@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   if Rails.env == 'production'
     TRANSACTION_LOG_PATH = '/Users/isdl-light/Server/tyc-manager/log/transaction_log.csv'.freeze
   else
-    TRANSACTION_LOG_PATH = '/Users/Y_h/Rails_work/csv_loader/log/transaction_log.csv'.freeze
+    TRANSACTION_LOG_PATH = '/Users/Y_h/Rails_work/tyc-manager/log/transaction_log.csv'.freeze
   end
 
   # 研究室内の人数

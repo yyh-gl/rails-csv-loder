@@ -9,14 +9,15 @@ class TransactionsController < ApplicationController
     else
       @env = '開発'
     end
-    csv_data = CSV.read(TRANSACTION_LOG_PATH, "r:ISO-8859-1")
+
+    # csv_data = CSV.read(TRANSACTION_LOG_PATH, "r:ISO-8859-1")
     bank_data = []
     @bank_data_list = []
     tyc_amount = 0
     @tyc_amount_list = []
     @transaction_data =[]
     count = 0
-    csv_data.each do |data|
+    CSV.foreach(TRANSACTION_LOG_PATH, encoding: 'Shift_JIS:UTF-8') do |data|
       if count % 2 == 0
         bank_data << data[0]
         data[1..-1].each_slice(2) do |a, b|
@@ -28,6 +29,10 @@ class TransactionsController < ApplicationController
         @tyc_amount_list << tyc_amount
         tyc_amount = 0
       else
+        # puts '----------'
+        # pp data[8].encode('UTF-8')
+        # puts '----------'
+        # data[8].encode!('UTF-8', 'Shift_JIS')
         @transaction_data << data
       end
       count += 1

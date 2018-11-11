@@ -7,6 +7,8 @@
   <p>送金主 -> 送金額 -> 受取主</p>
   <p><%= @transaction_data[@bank_data_list.size-1-i][2] %> -> <%= @transaction_data[@bank_data_list.size-1-i][6] %> -> <%= @transaction_data[@bank_data_list.size-1-i][4] %> </p>
 
+  <p>【取引理由】 <%= @transaction_data[@bank_data_list.size-1-i][8] %></p>
+
   <h3>本取引後の所持TYC一覧</h3>
   <p>総TYC金額（流通量）： <%= @tyc_amount_list[@bank_data_list.size-1-i] %></p>
   <p> 所有者 ： 所有TYC </p>
